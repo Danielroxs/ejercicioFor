@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit</title>
+</head>
+<body>
+
+    <h1>Submit</h1>
+
+    <form action="" id="form">
+        <div><input type="text" id="curso">Curso</div>
+        <div><input type="text" id="duracion">Duracion</div>
+        <div><input type="checkbox" id="chk">cambiar</div>
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        const form = document.querySelector('#form');
+      
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            let curso = document.querySelector('#curso').value;
+            let duracion = document.querySelector('#duracion').value;
+            console.log(curso, duracion);
+        })
+
+        /* aqui usamos el input de tipo checkbox para monitorear el cambio con el evento 'change' lo cual detona la funcion que imprime por pantalla 'Haz tocado el boton de cambiar' */
+
+        let chk = document.querySelector('#chk')
+
+        chk.addEventListener('change', () => {
+            console.log('Haz tocado el boton de cambiar')
+        })
+    </script>
+    
+</body>
+</html>

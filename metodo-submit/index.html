@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit</title>
+</head>
+<body>
+
+    <h1>Submit</h1>
+
+    <form action="" id="form">
+        <div><input type="text" id="curso">Curso</div>
+        <div><input type="text" id="duracion">Duracion</div>
+        <button type="submit">Submit</button>
+    </form>
+
+    <!-- Seleccionamos el formulario para poderlo manipular con el selector document.querySelector con su id y hashtag entre comillas -->
+
+    <script>
+        const form = document.querySelector('#form');
+        //console.log(form);
+
+        /* Agregamos un oyente o escuchador a form, luego el evento 'submit' detonara la funcion de la arrow function, el prevetDefault es para la e (evento) y poder manipular y quitar el comportamiento por defecto de enviar y resetear el formulario, guardamos el valor de los inputs con los respectivos id en cada variable con su seleccionador y agregamos .value para tener el valor y asi imprimirlo por consola con console.log */
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            let curso = document.querySelector('#curso').value;
+            let duracion = document.querySelector('#duracion').value;
+            console.log(curso, duracion);
+        })
+    </script>
+    
+</body>
+</html>
