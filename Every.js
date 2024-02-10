@@ -13,3 +13,44 @@ let b = [20,15,21,31].every (valor => valor >= 18); // false 15 no es mayor
 
 console.log(a);
 console.log(b);
+
+//___________________________________________________________________________________________________
+
+const peliculas = [
+    {
+        titulo: 'Rambo 2',
+        anho: 1982,
+        puntos: 6.6,
+        genero: ['accion']
+    },
+    {
+        titulo: 'Rambo 3',
+        anho: 1983,
+        puntos: 7.0,
+        genero: ['accion']
+    },
+    {
+        titulo: 'Rambo 4',
+        anho: 1984,
+        puntos: 6.0,
+        genero: ['accion']
+    },
+    {
+        titulo: 'Rambo 5',
+        anho: 1985,
+        puntos: 5.6,
+        genero: ['thriller']
+    },
+    {
+        titulo: 'Top Gun',
+        anho: 1986,
+        puntos: 6.9,
+        genero: ['fantastico']
+    }
+]
+
+const mejorPeli = peliculas.some((pelis) => {
+    return pelis.puntos >= 7.0;
+})
+
+console.log(mejorPeli)
