@@ -29,3 +29,9 @@ while (numeroSecreto !== numeroMaquina) {
 
 console.log(`${numeroSecreto} contra ${numeroMaquina}`)
 console.log(`Haz acertado el numero correcto en el intento ${intentos}`)
+
+function saludar(nombre = 'null', apellido = 'null', numero = '999 - 999 - 999') {
+    console.log(`${nombre} ${apellido} - ${numero}`)
+}
+
+console.log(saludar())
