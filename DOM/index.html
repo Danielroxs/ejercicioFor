@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>DOM</title>
+</head>
+<body>
+    <h1 id="titulo">Estamos aprendiendo el DOM</h1>
+
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic, ipsum ipsa neque at repudiandae, iusto officia et eos eligendi, modi eum? Rem eos similique cumque voluptate error harum blanditiis? Ipsum.</p>
+
+    <p id="texto">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic, ipsum ipsa neque at repudiandae, iusto officia et eos eligendi, modi eum? Rem eos similique cumque voluptate error harum blanditiis? Ipsum.</p>
+
+    <img id="foto" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Canis_lupus_265b.jpg/800px-Canis_lupus_265b.jpg" alt="">
+
+    <script>
+        const chTitle = document.getElementById('titulo');
+        chTitle.textContent= "Hola a todos";
+
+        const chParra = document.getElementById('texto');
+        chParra.textContent = "¿Como estan todos?";
+
+        let chImage = document.getElementById('foto');
+        chImage.src = "https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Front_view_of_a_resting_Canis_lupus_ssp.jpg/220px-Front_view_of_a_resting_Canis_lupus_ssp.jpg"
+
+    </script>
+</body>
+</html>
