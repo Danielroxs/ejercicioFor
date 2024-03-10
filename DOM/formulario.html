@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario HTML</title>
+</head>
+
+<body>
+
+    <h1>Formulario</h1>
+
+    <form action="" id="formulario">
+        nombre: <input type="text" name="nombre" id="nombre"><br>
+        apellido: <input type="text" name="apellido" id="apellido"><br>
+
+
+    </form>
+    <button id="btn">Mostrar Datos</button>
+
+    <div id="resultado"></div>
+
+    <script>
+
+        const btn = document.querySelector('#btn')
+        //console.log(btn)
+        btn.addEventListener('click', mostrarDatos) // agrega un escuchador de eventos al boton (osea btn) y cuando gatilleen el evento ('click') dispara la funcion mostrarmeDatos() 
+
+        function mostrarDatos() {
+            const form = document.forms['formulario'];
+            //console.log(form);
+            const datos = [];
+            for (let elemento of form) {
+                //console.dir(elemento.value)
+                datos.push(elemento.value)
+            }
+            console.log(datos)
+
+            const divResultado = document.querySelector('#resultado');
+            divResultado.textContent = datos;
+        }
+    </script>
+
+</body>
+
+</html>
