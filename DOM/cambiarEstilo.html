@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="title">Titulo</h1>
+
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam explicabo totam alias modi a distinctio?
+        Sapiente quia hic, consectetur nesciunt, fuga minus enim accusantium inventore quisquam temporibus maxime odio
+        laudantium?</p>
+
+    <button id="btn">Mostrar Cambios</button>
+
+    <img id="img"
+        src="https://images.pexels.com/photos/4428290/pexels-photo-4428290.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+        alt="karate">
+
+    <script>
+
+        document.querySelector('#btn').addEventListener('click',cambiarEstilos);
+        const img = document.querySelector('img');
+        console.log(img.getAttribute('alt'));
+        console.log(img.getAttribute('id'));
+        //img.setAttribute('width', '400px');
+        img.setAttribute('height', '600px');
+
+        function cambiarEstilos() {
+            document.querySelector('#img').style.width = '400px';
+            document.querySelector('p').textContent = 'El Karate o Kárate​ es un arte marcial tradicional basada en algunos estilos de las artes marciales chinas (wushu), y en otras disciplinas provenientes de Okinawa como el Tegumi  y el Kobudō.';
+            document.querySelector('p').className = 'parrafo'
+            //document.querySelector('#img').className = 'imagen';
+            //document.querySelector('#title').style.border = 'dotted blue 13px';
+            //document.querySelector('#title').style.padding = '13px';
+            //document.querySelector('#title').style.background = 'gray';
+        }
+    </script>
+</body>
+
+</html>

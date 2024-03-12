@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 class="title" id="title">Metodos para trabajar con clases</h1>
+    <h2>Classlist</h2>
+    <section id="section">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit facilis mollitia aperiam, omnis, eveniet
+            quidem, laboriosam ratione ipsum animi maxime et? Quae ut expedita nostrum eaque qui, quos autem neque?</p>
+    </section>
+
+    <script>
+        /* 
+        e.classList.add('clase'); // AGREGA
+        e.classList.remove('clase'); // ELIMINA
+        e.classList.toggle('clase'); // Si existe elimina, sino AGREGA
+        e.classList.contains('clase'); // True or False
+        e.classList.replace('clase'); // Reemplaza 
+        */
+
+        const h1 = document.querySelector('#title');
+        console.log(h1)
+        h1.classList.add('mover', 'xxx')    // se pueden agregar mas de dos clases separando por coma '',''
+        h1.classList.remove('mover') // se pueden remover mas de dos clases separando por coma '',''
+        h1.classList.toggle('mover') // no se puede quitar mas de una a la vez
+        console.log(h1.classList.contains('mover'))
+        h1.classList.replace('mover', 'movido') // espera lo que se va a reemplazar y con que se va a reemplazar
+
+        //h1.className = 'especial'   si uso className me cargo todas las clases anteriores, por eso es mejor usar add de classList para agregar una clase
+        h1.classList.add('especial')
+    </script>
+</body>
+
+</html>
