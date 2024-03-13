@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit</title>
+</head>
+
+<body>
+    <h1>Evento submit</h1>
+    
+    <form action="" id="form">
+        <div><input type="text" name="" id="curso">Curso</input></div>
+        <div><input type="text" name="" id="duracion">Duracion</input></div>
+        <button type="submit">Enviar Formulario</button>
+    </form>
+
+
+    <script>
+        const form = document.querySelector('#form');
+        //console.dir(form)
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault()
+            let curso = document.querySelector('#curso').value
+            let duracion = document.querySelector('#duracion').value
+            console.log(curso, duracion);
+        })
+    </script>
+</body>
+
+</html>
