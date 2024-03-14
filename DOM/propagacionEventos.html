@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Focus and Blur</title>
+</head>
+
+<body>
+    <h1>Focus and Blur</h1>
+
+    <form action="" id="form">
+        <div>
+            <input type="text" name="" id="curso">Curso</input>
+        </div>
+        <div><input type="text" name="" id="duracion" onfocus="foco(this)">Duracion</input></div> <!-- le estoy pasando el objeto mediante this, asi en la funcion puedo modificar el objeto sin problema -->
+        <div><input type="checkbox" name="" id="chk">cambiar</div>
+        <button type="submit">Enviar Formulario</button>
+    </form>
+
+
+    <!-- <script>
+
+        const input = document.querySelector('#curso');
+        const div = document.querySelector('div');
+        const form = document.querySelector('form');
+        const body = document.querySelector('body');
+
+        input.addEventListener('click', (e) => {
+            console.log(e);
+            console.log(e.target);
+            console.log('input: click');
+        })
+
+        div.addEventListener('click', (e) => {
+            console.log(e);
+            console.log(e.target);
+            console.log('div: click');
+        })
+
+        form.addEventListener('click', (e) => {
+            console.log(e);
+            console.log(e.target);
+            console.log('form: click');
+        })
+        
+        body.addEventListener('click', (e) => {
+            console.log(e);
+            console.log(e.target);
+            console.log('body: click');
+        })
+
+    </script> -->
+
+    <script>
+        for(let elemento of document.querySelectorAll('*')) {
+            elemento.addEventListener('click', mostrar)
+        }
+
+        function mostrar (e) {
+            console.log(this.tagName);
+            console.log(e.target.tagName);
+        }
+
+    </script>
+</body>
