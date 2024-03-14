@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Focus and Blur</title>
+</head>
+
+<body>
+    <h1>Focus and Blur</h1>
+
+    <form action="" id="form">
+        <div><input type="text" name="" id="curso">Curso</input></div>
+        <div><input type="text" name="" id="duracion" onfocus="foco(this)">Duracion</input></div> // le estoy pasando el objeto mediante this, asi en la funcion puedo modificar el objeto sin problema
+        <div><input type="checkbox" name="" id="chk">cambiar</div>
+        <button type="submit">Enviar Formulario</button>
+    </form>
+
+
+    <script>
+        const input = document.querySelector('#curso');
+
+        input.addEventListener('focus', (e) => {
+            console.log(e)
+            console.log(e.target)
+            e.target.style.background = "tomato";
+        })
+
+        input.addEventListener('blur', (e) => {
+            e.target.style.background = "white";
+        })
+
+        function foco (objeto) {
+            console.log(objeto);
+            objeto.style.background = 'yellow'
+        }
+    </script>
+</body>
