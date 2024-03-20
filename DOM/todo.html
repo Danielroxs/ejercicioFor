@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo</title>
+</head>
+<body>
+    <h2>Lista de Todo</h2>
+    <hr>
+        <h3>Agregar Tarea</h3>
+        <form action="" id="form-todo">
+            <input type="text" name="" id="tarea">
+            <input type="submit" value="Agregar Tarea">
+        </form>
+
+        <div>
+            <h3>Tareas Agregadas</h3>
+            <ul id="tareas">
+                <li>Tarea1<button>x</button></li>
+            </ul>
+        </div>
+    </hr>
+
+    <hr>
+    <h3>Buscar tarea</h3>
+    <div>
+        <input type="text" name="" id="buscar" placeholder="buscar...">
+    </div>
+    
+
+    <script>
+
+        const form = document.querySelector('#form-todo');
+        const lista = document.querySelector('#tareas');
+        const buscar = document.querySelector('#buscar');
+        
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const tarea = document.querySelector('#tarea').value
+
+            const li = document.createElement('li');
+            li.appendChild(document.createTextNode(tarea))
+
+            const btn = document.createElement('button');
+            btn.className = 'borrar';
+            btn.appendChild(document.createTextNode('X'))
+
+            li.appendChild(btn)
+            lista.appendChild(li)
+            console.log(lista)
+        })
+
+        lista.addEventListener('click', (e) => {
+            if (e.target.classList.contains('borrar')) {
+                //console.log('SI');
+                const elementoAEliminar = e.target.parentNode;
+                lista.removeChild(elementoAEliminar)
+            } else {
+                //console.log('NO');
+            }
+        })
+
+        buscar.addEventListener('keyup', (e) => {
+            const cadena = e.target.value.toLowerCase();
+            const tareas = document.querySelectorAll('li');
+            //console.log(tareas);
+
+            for (let tarea of tareas) {
+                //console.log(tarea.firstChild.textContent)
+                if (tarea.firstChild.textContent.toLocaleLowerCase() === cadena){
+                    console.log('Existe')
+                }
+            }
+        })
+
+    </script>
+    
+</body>
+</html>
