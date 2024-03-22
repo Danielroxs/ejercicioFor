@@ -9,6 +9,12 @@ class Persona {
         this._localidad = localidad;
     } // fin del constructor
 
+    // METODO
+
+    dameDatos () {
+        return `${this._nombre}, ${this._apellido}, ${this._localidad}.`;
+    }
+
     // Metodo get es para obtener algo
     get getNombre() {
         return this._nombre;
@@ -49,6 +55,12 @@ class Empleado extends Persona {
 
     }
 
+    // METODO
+
+    dameDatos () {
+        return `${super.dameDatos()} ,${this._departamento}, ${this._sueldoBasico}.`;
+    }
+
     set setDepartamento(departamento) {
         this._departamento = departamento;
     }
@@ -74,6 +86,12 @@ class Ejecutivo extends Empleado {
         this._obraSocial = obraSocial;
     }
 
+    // METODO
+
+    dameDatos () {
+        return `${super.dameDatos()} ,${this._beneficio}, ${this._obraSocial}.`;
+    }
+
     // GETTERS
 
     get getBeneficio () {
@@ -96,14 +114,14 @@ class Ejecutivo extends Empleado {
 }
 
 let persona01 = new Persona('Mark', 'Markinson');
-let empleado01 = new Empleado('Jorge', 'Perez', 'Bs As', 'Ventas', 56000)
-let empleado02 = new Empleado('Domingo', 'Sarmiento', 'Formosa', 'Administracion', 86000)
+let empleado01 = new Empleado('Jorge', 'Perez', 'Bs As', 'Ventas', 56000);
+let empleado02 = new Empleado('Domingo', 'Sarmiento', 'Formosa', 'Administracion', 86000);
 let ejecutivo01 = new Ejecutivo('Romina', 'Manguel', 'Capital Federal', 'RRHH', 19600, 'Toyota 2022', 'Galeno Oro');
 
 console.table(empleado01);
 console.table(empleado02);
 console.log(empleado02.getNombre);
-empleado02.setLocalidad = 'Villa Hermosa'
+empleado02.setLocalidad = 'Villa Hermosa';
 console.log(empleado02.getTodo);
 
 console.table(empleado01);
@@ -116,72 +134,6 @@ ejecutivo01.setNombre = 'Johan';
 ejecutivo01.setBeneficio = 'Lexus 2021';
 console.table(ejecutivo01);
 
-
-
-class Animal {
-    constructor (raza, peso, color) {
-        this._raza = raza;
-        this._peso = peso;
-        this._color = color;
-    }
-
-    // GETTERS
-
-    // RAZA
-
-    get getRaza () {
-        return this._raza;
-    }
-
-    get getPeso () {
-        return this._peso;
-    }
-
-    get getColor () {
-        return this._color;
-    }
-
-    // SETTERS
-
-    set setRaza (raza) {
-        this._raza = raza;
-    }
-
-    set setPeso (peso) {
-        this._peso = peso;
-    }
-
-    set setColor (color) {
-        this._color = color;
-    }
-
-}
-
-
-class Rabia extends Animal{
-    constructor(raza, peso, color, rabia) {
-        super(raza, peso, color)
-        this._rabia = rabia;
-    }
-    
-    get getRabia() {
-        return this._rabia;
-    }
-    
-    set setRabia (rabia) {
-        this._rabia = rabia;
-    }
-}
-
-
-let animal01 = new Animal ('pug', '0.5kg', 'verde');
-console.table(animal01);
-
-let animalRabioso01 = new Rabia ('Coli', '50kg', 'Negro', 'SI');
-console.table(animalRabioso01);
-
-animalRabioso01.setColor = 'Cafe';
-console.table(animalRabioso01);
-console.log(animalRabioso01.getRabia);
-animalRabioso01.setRabia = 'NO';
-console.table(animalRabioso01);
+console.log(persona01.dameDatos());
+console.log(empleado01.dameDatos());
+console.log(ejecutivo01.dameDatos());
