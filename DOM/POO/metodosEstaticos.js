@@ -20,8 +20,8 @@ class Persona {
     }
 
     // PERTENECEN A LA CLASE Y NO AL OBJETO
-    static saludar () {
-        return 'hola';
+    static saludar (objeto) {
+        return objeto._nombre;
     }
 
     // Metodo get es para obtener algo
@@ -151,4 +151,9 @@ console.log(persona01.poli());
 console.log(empleado01.poli());
 console.log(ejecutivo01.poli());
 
-console.log(Persona.saludar());
+console.log(Persona.saludar(persona01));
+/* console.log(Empleado.saludar());
+console.log(Ejecutivo.saludar()); */
+
+console.log(Persona.saludar(ejecutivo01));
+console.table(Persona.saludar(ejecutivo01))
