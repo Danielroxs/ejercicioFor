@@ -4,26 +4,33 @@
 class Persona {
     // PERTENECE A LA CLASE Y NO AL OBJETO, SE HEREDA
     static contadorObjetos = 0;
+    usuario = 'vacio';
 
     constructor(name = 'sin nombre', lastname = 'sin apellido', localidad = 'Mexico') {
         this._nombre = name;
         this._apellido = lastname;
         this._localidad = localidad;
-        Persona.contadorObjetos++;
+        this._id = ++Persona.contadorObjetos;
     } // fin del constructor
 
     // METODO
 
-    dameDatos () {
-        return `${this._nombre}, ${this._apellido}, ${this._localidad}.`;
+    dameDatos() {
+        return `${this._nombre}, id:${this._id}, ${this._apellido}, ${this._localidad}.`;
     }
 
-    poli () {
+    poli() {
         return this.dameDatos();
     }
 
+    // Metodo Estatico
+
+    static get VIDA() {
+        return 100;
+    }
+
     // PERTENECEN A LA CLASE Y NO AL OBJETO
-    static saludar (objeto) {
+    static saludar(objeto) {
         return objeto._nombre;
     }
 
@@ -57,6 +64,10 @@ class Persona {
         return `Nombre y apellido: ${this._nombre} ${this._apellido} y vivo en ${this._localidad}.`;
     }
 
+    get getId() {
+        return this._id;
+    }
+
 } // fin de la clase Persona
 
 class Empleado extends Persona {
@@ -69,7 +80,7 @@ class Empleado extends Persona {
 
     // METODO
 
-    dameDatos () {
+    dameDatos() {
         return `${super.dameDatos()} ,${this._departamento}, ${this._sueldoBasico}.`;
     }
 
@@ -93,30 +104,30 @@ class Empleado extends Persona {
 
 class Ejecutivo extends Empleado {
     constructor(name, lastname, localidad, departamento, sueldoBasico, beneficio, obraSocial) {
-        super (name, lastname, localidad, departamento, sueldoBasico);
+        super(name, lastname, localidad, departamento, sueldoBasico);
         this._beneficio = beneficio;
         this._obraSocial = obraSocial;
     }
 
     // METODO
 
-    dameDatos () {
+    dameDatos() {
         return `${super.dameDatos()} ,${this._beneficio}, ${this._obraSocial}.`;
     }
 
     // GETTERS
 
-    get getBeneficio () {
+    get getBeneficio() {
         return this._beneficio;
     }
 
-    get getObraSocial () {
+    get getObraSocial() {
         return this._obraSocial;
     }
 
     // SETTERS
 
-    set setBeneficio (beneficio){
+    set setBeneficio(beneficio) {
         this._beneficio = beneficio;
     }
 
@@ -159,5 +170,12 @@ console.log(Persona.saludar(persona01));
 console.log(Ejecutivo.saludar()); */
 
 console.log(Persona.saludar(ejecutivo01));
-console.table(Persona.saludar(ejecutivo01))
-console.log(Persona.contadorObjetos)
+console.table(Persona.saludar(ejecutivo01));
+console.log(Persona.contadorObjetos);
+
+console.log(empleado01.usuario);
+
+Persona.pass = '123';
+console.log(Empleado.pass);
+
+console.log(Persona.VIDA);
