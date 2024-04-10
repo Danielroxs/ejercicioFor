@@ -9,7 +9,7 @@ const mover = (el, cant, tiempo) => {
 
             console.log(anchoPantalla, medidaObjeto, izquierda);
 
-            if(medidaObjeto + cant > anchoPantalla) {
+            if (medidaObjeto + cant > anchoPantalla) {
                 reject();
             } else {
                 el.style.transform = `translateX(${izquierda + cant}px)`;
@@ -19,8 +19,25 @@ const mover = (el, cant, tiempo) => {
     })
 };
 
-mover (div,50,1000)
+async function animar(el, cant) {
+    try {
+        await mover(el, cant, 1000)
+        await mover(el, cant, 1000)
+        await mover(el, cant, 1000)
+        await mover(el, cant, 1000)
+        await mover(el, cant, 1000)
+        await mover(el, cant, 1000)
+    } catch (error) {
+        console.log('No puedo moverme mas')
+        await mover(div, -50, 1000)
+        await mover(div, -50, 1000)
+        await mover(div, -50, 1000)
+    }
+}
+
+animar(div, 50)
+/* mover (div,50,1000)
 
     .then(() => mover (div,50,1000))
     .then(() => mover (div,900,1000))
-    .catch(() => console.log('No hay espacio'))
+    .catch(() => console.log('No hay espacio')) */
